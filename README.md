@@ -74,17 +74,5 @@
 
 
 
-视频信息表
-表名称:videoinfo
 
-表结构：
-
-    {
-        name:"nodeSystem",
-        scope:"",
-        keyword:"html css js"，
-        src:'/uploaded/video.mp4'
-        notedata:''
-    }
-      
 
