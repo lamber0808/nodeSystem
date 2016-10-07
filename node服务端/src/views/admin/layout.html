@@ -1,0 +1,63 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>视频管理</title>
+		<link rel="stylesheet" href="/bowersrc/bootstrap/dist/css/bootstrap.min.css">
+		<style>
+			.navbar-default .navbar-brand
+			{
+				color:white;
+				font-size:26px;
+			}
+			.navbar-default .navbar-text,.navbar-default .navbar-link
+			{
+				color:white;
+				font-size:16px;
+			}
+		</style>
+		{{{block ("head")}}}
+	</head>
+	<body>
+		<div class="container" >
+			<div class="row" style="height:64px;">
+			<nav class="navbar navbar-default" style="background-color:#0094ff" >
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">欢迎进入后台管理系统</a>
+	        </div>
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+	          <p class="navbar-text navbar-right">欢迎XX登陆 
+	          <a href="#" class="navbar-link">退出</a></p>
+	        </div>
+	      </div>
+	    </nav>
+			</div>
+
+
+		<div class="row">
+		<div class="col-md-3" style="padding:0px;">
+				<div class="list-group">
+			  <a href="#" class="list-group-item active">
+			    系统管理
+			  </a>
+			  <a href="#" class="list-group-item">视频管理</a>
+			  <a href="#" class="list-group-item">用户管理</a>
+			  <a href="#" class="list-group-item">修改密码</a>
+			  <a href="#" class="list-group-item">退出系统</a>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			{{{block ("body")}}}
+		</div>
+		</div>
+
+	</body>
+	</html>

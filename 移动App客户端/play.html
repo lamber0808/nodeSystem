@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <script src="js/mui.min.js"></script>
+    <script type="text/javascript">
+        mui.init()
+    </script>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">首页</a>
+    <h1 class="mui-title">视频播放列表</h1>
+</header>
+
+<div class="mui-content">
+    <div class="title1">
+        <ul>
+            <li>NodeJS基础知识介绍</li>
+            <li>观看次数:883次</li>
+        </ul>
+        <div id="video"></div>
+        <div style="padding: 10px 10px;">
+            <div id="segmentedControl" class="mui-segmented-control">
+                <a class="mui-control-item mui-active" href="#item1">
+                    课程详情
+                </a>
+                <a class="mui-control-item" href="#item2">
+                    章节管理
+                </a>
+            </div>
+
+            <div id="item1" class="mui-control-content mui-active">
+                课程详情
+            </div>
+
+            <div id="item2" class="mui-control-content">
+                章节管理
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<!-- 这个div是播放器准备输出的位置 --><!-- 引入腾讯视频播放器组件 -->
+<script language="javascript" src="js/tvp.player.js" charset="utf-8"></script>
+<script language="javascript">
+    function setvideoid(vid)
+    {
+        //定义视频对象
+        var video = new tvp.VideoInfo();
+        //向视频对象传入视频vid
+//      video.setVid("r0324a7tce0");
+        video.setVid(vid);
+        //定义播放器对象
+//       var player = new tvp.Player(320, 240);
+        var player = new tvp.Player('100%',240);
+        //设置播放器初始化时加载的视频
+        player.setCurVideo(video);
+        //设置精简皮肤，仅点播有效
+        //player.addParam("flashskin", "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf");
+        //输出播放器,参数就是上面div的id，希望输出到哪个HTML元素里，就写哪个元素的id
+        player.addParam("autoplay","1");
+        player.addParam("wmode","transparent");
+        //没有播放之前，显示的图片是什么
+        player.addParam("pic","http://odr25de00.bkt.clouddn.com/11.png")
+        player.write("video"); //将视频播放代码写入到id=video的div中
+    }
+
+</script>
+
+<script>
+    $(function(){
+        getdata();
+    });
+    <!--单页面的跳转-->
+    function getdata() {
+        var url = window.location.href.toString();
+        var urlArr = url.split('?')[1].split('=');
+        var vid = urlArr[1];
+        var ajaxUrl = 'http://weibiao.ittun.com/api/getvideo/'+vid;
+        $.getJSON(ajaxUrl,null,function(data){
+            console.log(data);
+            //data:{status:0,message}
+            if(data.status == 1) //失败
+            {
+                alert(data.message);
+                return;
+            }
+            //处理
+            //3.0.1 将课程详细介绍内容填充到id=item1的div中
+            var vreamark = data.message[0].vremark;
+            $("#item1").html(vreamark);
+
+            //3.0.2 将视频的id重新设置
+            var vvideid = data.message[0].vvideoid;
+            setvideoid(vvideid); //根据vid执行对于的腾讯视频加载工作
+        });
+
+    }
+</script>
+</html>

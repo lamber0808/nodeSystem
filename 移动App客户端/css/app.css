@@ -1,0 +1,69 @@
+.mui-title
+{
+	font-weight: bold;
+	color:#0094ff;
+}
+
+.title {
+			    margin: 10px 15px 7px;
+			    color: #6d6d72;
+			    font-size: 15px;
+			}
+			.title1{
+				height: 50px;
+				background: #F7F7F7;
+				font-size: 20px;
+				text-align: center;
+			}
+			.title1 ul{
+				margin: 0px;
+			}
+			.title1 li{
+				list-style: none;
+				margin-top: 5px;
+				
+			}
+			.title1 li:last-child{
+				font-size: 12px;
+				color:#AAAAAA;
+			}
+			
+			
+			i.mui-icon:before
+			{
+				font-size: 18px;
+				
+			}
+			.m1
+			{
+				
+				color:white;
+				background:green;
+				height: 26px;
+				width: 26px;
+				border-radius: 13px;
+				margin-right: 5px;
+			}
+		#plv_4e758caddcabaefc0e5d8a4158b44df5_4{
+			min-height:250px;
+			
+		}
+		.mui-badge-purple{
+			border-radius:25px;
+		}
+		
+		.bj{
+			position: absolute;
+			top:50%;
+			left:30px;
+			display: inline-block;
+			width: 22px;
+			height: 18px;
+			font-size: 9px;
+		}
+		.abj{
+			padding-left: 62px !important;
+		}
+		#item2,#item2 p{
+			background:white;
+		}

@@ -1,0 +1,6 @@
+开启WampServer  - dbForge
+
+npm run dev      开启后台服务                  127.0.0.1:6001  
+wxapp2           运行app.js 开启微信服务       127.0.0.1:6005   *
+移动app          运行index.js 开启页面服务     127.0.0.1:8021 
+

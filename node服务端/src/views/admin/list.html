@@ -1,0 +1,116 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="/bowersrc/bootstrap/dist/css/bootstrap.min.css">
+		<style>
+			.navbar-default .navbar-brand
+			{
+				color:white;
+				font-size:26px;
+			}
+			.navbar-default .navbar-text,.navbar-default .navbar-link
+			{
+				color:white;
+				font-size:16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" >
+			<div class="row" style="height:64px;">
+			<nav class="navbar navbar-default" style="background-color:#0094ff" >
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">欢迎进入后台管理系统</a>
+	        </div>
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+	          <p class="navbar-text navbar-right">欢迎XX登陆 
+	          <a href="#" class="navbar-link">退出</a></p>
+	        </div>
+	      </div>
+	    </nav>
+			</div>
+
+
+		<div class="row">
+		<div class="col-md-3" style="padding:0px;">
+				<div class="list-group">
+			  <a href="#" class="list-group-item active">
+			    系统管理
+			  </a>
+			  <a href="#" class="list-group-item">视频管理</a>
+			  <a href="#" class="list-group-item">用户管理</a>
+			  <a href="#" class="list-group-item">修改密码</a>
+			  <a href="#" class="list-group-item">退出系统</a>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+					<ol class="breadcrumb">
+					  <li><a href="#">首页</a></li>
+					  <li><a href="#">视频管理</a></li>
+					
+					</ol>
+			  </div>
+			   <div class="panel-heading">
+					<form class="form-inline">
+					  <div class="form-group">
+					    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+					    <div class="input-group">
+					      <div class="input-group-addon">视频名称</div>
+					      <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入视频名称">
+					   
+					    </div>
+					  </div>
+					  <button type="submit" class="btn btn-primary">查找</button>
+					   <input type="button" class="btn btn-primary" value="新增"></button>
+					</form>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table table-bordered">
+				      <thead>
+				        <tr>
+				          <th>#</th>
+				          <th>First Name</th>
+				          <th>Last Name</th>
+				          <th>Username</th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				        <tr>
+				          <th scope="row">1</th>
+				          <td>Mark</td>
+				          <td>Otto</td>
+				          <td>@mdo</td>
+				        </tr>
+				        <tr>
+				          <th scope="row">2</th>
+				          <td>Jacob</td>
+				          <td>Thornton</td>
+				          <td>@fat</td>
+				        </tr>
+				        <tr>
+				          <th scope="row">3</th>
+				          <td>Larry</td>
+				          <td>the Bird</td>
+				          <td>@twitter</td>
+				        </tr>
+				      </tbody>
+				    </table>
+			  </div>
+			</div>
+		</div>
+		</div>
+
+	</body>
+	</html>

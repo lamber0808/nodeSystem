@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<link rel="stylesheet" href="/bowersrc/bootstrap/dist/css/bootstrap.min.css">
+	<script src="/bowersrc/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container" style="width:600px;margin:0 auto;">
+	<div class="row">
+		<div class="panel panel-primary">
+		 
+		  <div class="panel-heading">登录管理系统</div>
+		  <div class="panel-body">
+		    
+		    <form action="/account/login" method="post" class="form-horizontal">
+			  <div class="form-group">
+			    <label for="uname" class="col-sm-2 control-label">用户名</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="uname" id="uname" placeholder="请输入用户名">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="upwd" class="col-sm-2 control-label">密码</label>
+			    <div class="col-sm-10">
+			      <input type="password" class="form-control" name="upwd" id="upwd" placeholder="请输入密码">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label for="vcode" class="col-sm-2 control-label">验证码</label>
+			    <div class="col-sm-7">
+			      <input type="text" class="form-control" name="vcode" id="vcode" placeholder="请输入验证码">
+			    </div>
+			    <div class="col-sm-3">
+ 					<img id="vcodeimg" src="/account/vcode" />
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default">登录</button>
+			    </div>
+			  </div>
+			</form>
+
+		  </div>
+		</div>
+	</div>
+		
+	</div>
+</body>
+<script>
+ $(function(){
+
+ 	//给图片加上点击事件
+ 	$("#vcodeimg").click(function(){
+ 		//将当前图片对象的src的值重新赋予一个 /account/vcode
+ 		//为了防止浏览器将图片缓存，每次请求的路径应该要改变
+ 		var vcodepath = '/account/vcode?vid='+Math.random();
+ 		$(this).attr('src',vcodepath); //当这句代码执行，就会自动向服务器发送一个请求
+ 	});
+
+ })
+</script>
+</html>
