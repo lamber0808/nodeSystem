@@ -1,4 +1,4 @@
-#NodeJS 项目
+#NodeJS 后台管理系统项目
 ##用到的模块有：
 
     - 1、express 用来实现项目的web服务，路由功能，静态模块 
@@ -80,11 +80,11 @@
 表结构：
 
     {
-        name:"基础班12天",
-        scope:"基础班阶段",
+        name:"nodeSystem",
+        scope:"",
         keyword:"html css js"，
-        src:'/uploaded/day01-01.mp4'
-        notedata:'第一天的笔记'
+        src:'/uploaded/video.mp4'
+        notedata:''
     }
       
 
